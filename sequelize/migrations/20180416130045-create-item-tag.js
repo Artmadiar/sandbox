@@ -8,13 +8,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      tag_id: {
+      tagId: {
         type: Sequelize.INTEGER
       },
       taggable: {
         type: Sequelize.STRING
       },
-      taggable_id: {
+      taggableId: {
         type: Sequelize.INTEGER
       },
       createdAt: {

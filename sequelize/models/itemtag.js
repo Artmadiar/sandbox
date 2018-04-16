@@ -1,9 +1,9 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var ItemTag = sequelize.define('ItemTag', {
-    tag_id: DataTypes.INTEGER,
+    tagId: DataTypes.INTEGER,
     taggable: DataTypes.STRING,
-    taggable_id: DataTypes.INTEGER
+    taggableId: DataTypes.INTEGER
   }, {});
   ItemTag.associate = function(models) {
     // associations can be defined here

@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING
   }, {});
   Post.associate = function(models) {
-    Post.hasMany(models.Tag, {
+    Post.belongsToMany(models.Tag, {
       through: {
         model: models.ItemTag,
         unique: false,
@@ -12,11 +12,12 @@ module.exports = (sequelize, DataTypes) => {
           taggable: 'post'
         }
       },
+      foreignKey: 'taggableId',
+      otherKey: 'tagId',
       scope: {
         status: 'pending'
       },
       as: 'pendingTags',
-      foreignKey: 'taggable_id',
       constraints: false
     });
   };
